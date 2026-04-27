@@ -1,0 +1,41 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.post {
+    background: white;
+    color: black;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: scale(1.03);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.gonder-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #f39c12;
+    font-weight: bold;
+    cursor: pointer;
+}
