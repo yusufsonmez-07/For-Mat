@@ -1,11 +1,104 @@
-<div style="max-width: 600px; margin: 40px auto;">
-    <div class="card">
-        <div style="background: #fff9c4; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 14px; border: 1px solid #fbc02d;">
-            ⚠️ <strong>Bilgi:</strong> Gönderdiğiniz yazılar onaylandıktan sonra admin tarafından ana sayfaya eklenecektir.
-        </div>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Yazı Gönder | For-Mat</title>
+    <style>
+        /* Sadece bu sayfaya özel ek düzenleme */
+        .form-container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
         
-        <h2>📝 Yeni Blog Yazısı Gönder</h2>
+        .info-banner {
+            background-color: #fff9c4;
+            border: 1px solid #fbc02d;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #5d4037;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #282829;
+        }
+
+        input[type="text"], 
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dee0e1;
+            border-radius: 4px;
+            background-color: #f7f7f8;
+            font-family: inherit;
+            box-sizing: border-box; /* Taşmayı önler */
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #b92b27;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">For-Mat</a>
+        <nav class="nav-links">
+            <a href="index.html">🏠 Akışa Dön</a>
+        </nav>
+    </div>
+</header>
+
+<div class="form-container">
+    <div class="info-banner">
+        <span>⚠️</span>
+        <span><strong>Bilgi:</strong> Gönderdiğiniz yazılar onaylandıktan sonra admin tarafından ana sayfaya eklenecektir.</span>
+    </div>
+
+    <div class="card">
+        <h2 style="margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 15px;">📝 Yeni Blog Yazısı Gönder</h2>
+        
         <form action="https://formspree.io/f/senin_id_buraya" method="POST">
-            </form>
+            <div class="form-group">
+                <label>Adınız Soyadınız</label>
+                <input type="text" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+            </div>
+
+            <div class="form-group">
+                <label>Yazı Başlığı</label>
+                <input type="text" name="title" placeholder="Örn: Pi Sayısının Gizemi" required>
+            </div>
+
+            <div class="form-group">
+                <label>Blog İçeriği</label>
+                <textarea name="message" rows="8" placeholder="Matematik hakkında anlatmak istediklerini buraya yaz..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-size: 16px;">
+                Başvuruyu Gönder
+            </button>
+        </form>
     </div>
 </div>
+
+</body>
+</html>
