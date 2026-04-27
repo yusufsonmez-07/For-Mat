@@ -52,9 +52,10 @@ header {
 
 .main-layout {
     display: grid;
-    grid-template-columns: 200px 1fr 240px;
-    gap: 25px;
-    max-width: 1000px;
+    /* 3 sütun yerine 2 sütun yaptık, böylece yazılar sağa doğru genişleyecek */
+    grid-template-columns: 220px 1fr; 
+    gap: 30px;
+    max-width: 1100px;
     margin: 25px auto;
     padding: 0 20px;
 }
