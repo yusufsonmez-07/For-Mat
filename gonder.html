@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Blog Gönder</title>
     <link rel="stylesheet" href="style.css">
+    <title>Yazı Gönder | For-Mat</title>
 </head>
 <body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">For-Mat</a>
+            <nav class="nav-links">
+                <a href="index.html">🏠 Akış</a>
+            </nav>
+        </div>
+    </header>
 
-<h2>Blogunu Gönder</h2>
-
-<form action="https://formspree.io/f/mzdylzbe" method="POST">
-
-    <input type="text" name="isim" placeholder="Adın" required>
-
-    <input type="text" name="baslik" placeholder="Blog Başlığı" required>
-
-    <textarea name="icerik" placeholder="Blog içeriğin" required></textarea>
-
-    <button type="submit">Gönder</button>
-
-</form>
-
-<a href="index.html">← Geri dön</a>
-
+    <div style="max-width: 600px; margin: 40px auto;">
+        <div class="card">
+            <h2>📝 Yeni Blog Yazısı Gönder</h2>
+            <form action="https://formspree.io/f/mzdylzbe" method="POST">
+                <input type="text" name="isim" placeholder="Adınız" style="width:100%; margin-bottom:10px; padding:8px;">
+                <input type="text" name="baslik" placeholder="Başlık" style="width:100%; margin-bottom:10px; padding:8px;">
+                <textarea name="icerik" rows="5" placeholder="İçerik..." style="width:100%; margin-bottom:10px; padding:8px;"></textarea>
+                <button type="submit" class="btn-primary">İncelemeye Gönder</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
