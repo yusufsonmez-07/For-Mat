@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>For-Mat | Matematik Forumu</title>
@@ -12,50 +13,48 @@
             <a href="index.html" class="logo">For-Mat</a>
             <nav class="nav-links">
                 <a href="index.html">🏠 Akış</a>
-                <a href="gonder.html" style="color: var(--quora-red);">+ Blog Yaz</a>
+                <a href="gonder.html" class="btn-primary" style="color: white; text-decoration: none; padding: 8px 15px;">+ Blog Yaz</a>
             </nav>
         </div>
     </header>
 
     <div class="main-layout">
-        <div class="sidebar">
+        <aside class="sidebar">
             <div class="sidebar-box">
-                <h4 style="margin-top:0">📚 Konular</h4>
+                <h4>📚 Konular</h4>
                 <div class="sidebar-item">📐 Geometri Sırları</div>
                 <div class="sidebar-item">🔢 Üslü Sayılar</div>
                 <div class="sidebar-item">🧪 Bilim ve Mat</div>
                 <div class="sidebar-item">🎮 Oyunlarda Matematik</div>
             </div>
-        </div>
+        </aside>
         
-        <div class="feed">
-            <div class="card" style="border-left: 5px solid var(--quora-red);">
-                <small>Hakkımızda</small>
+        <main class="feed">
+            <div class="card" style="border-left: 5px solid #b92b27;">
+                <small style="color: #b92b27; font-weight: bold;">Hakkımızda</small>
                 <h2>For-Mat Nedir?</h2>
                 <p><strong>For-Mat</strong> ismi, <strong>Forum</strong> ve <strong>Matematik</strong> kelimelerinin birleşiminden gelmektedir. Amacımız sayıların sıkıcı dünyasından çıkıp, matematiğin eğlenceli yanlarını keşfetmek.</p>
             </div>
 
             <div class="card">
-                <div class="author-info">✍️ Bir Öğrencinin Kaleminden</div>
+                <div class="author-info" style="font-size: 13px; color: #636466; margin-bottom: 5px;">✍️ Bir Öğrencinin Kaleminden</div>
                 <h2>Siyah Beyaz Sayılardan Renkli Dünyalara</h2>
                 <p>Eskiden matematik benim için sadece siyah bir tahtada beyaz tebeşirle yazılan, asla bitmek bilmeyen formüller yığınıydı. Sınav kağıdındaki o X’leri bulmaya çalışırken, 'Gerçek hayatta bu benim ne işime yarayacak ki?' diye düşünürdüm.</p>
-                
-                <p>Her şey bir gün kendi bilgisayarımı toplamak ve bir simülasyonda hidrolik sistemlerin nasıl çalıştığını anlamaya çalışmamla değişti. O gün anladım ki; o nefret ettiğim açılar ve oranlar aslında mekanik bir kolun nasıl hareket edeceğini, bir oyunun fiziğinin ne kadar gerçekçi olacağını belirleyen gizli bir dilmiş.</p>
-                
-                <p>Matematiği sevmeye başladım çünkü artık onu bir ödev olarak değil, dünyayı kontrol etmemi sağlayan bir süper güç olarak görüyordum. Şimdi LGS maratonunda o sorulara bakarken sadece puan görmüyorum, çözülen her problemle bir adım daha ileri gittiğimi hissediyorum.</p>
-                <div style="color: #636466; font-size: 13px; margin-top: 15px;">34 Beğeni • 12 Yorum</div>
+                <p>Her şey bir gün kendi bilgisayarımı toplamak ve bir simülasyonda hidrolik sistemlerin nasıl çalıştığını anlamaya çalışmamla değişti. O gün anladım ki; o nefret ettiğim açılar ve oranlar aslında mekanik bir kolun nasıl hareket edeceğini belirleyen gizli bir dilmiş.</p>
+                <p>Matematiği sevmeye başladım çünkü artık onu bir ödev olarak değil, dünyayı kontrol etmemi sağlayan bir süper güç olarak görüyordum.</p>
+                <div style="color: #636466; font-size: 13px; border-top: 1px solid #eee; padding-top: 10px;">34 Beğeni • 12 Yorum</div>
             </div>
-        </div>
+        </main>
 
-        <div class="right-panel">
+        <aside class="right-panel">
             <div class="sidebar-box">
-                <h4 style="margin-top:0">📢 Duyurular</h4>
+                <h4>📢 Duyurular</h4>
                 <p style="font-size: 13px; color: #636466;">LGS deneme sınavı sonuçları haftaya açıklanıyor. Blog yazmayı unutmayın!</p>
-                <hr>
-                <h4 style="margin-top:10px">🏆 Haftanın Yazarı</h4>
-                <p style="font-size: 13px;"><strong>@MatematikDehası</strong></p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                <h4>🏆 Haftanın Yazarı</h4>
+                <p style="font-size: 14px; font-weight: bold;">@MatematikDehası</p>
             </div>
-        </div>
+        </aside>
     </div>
 </body>
 </html>
