@@ -85,4 +85,9 @@ header {
 @media (max-width: 800px) {
     .main-layout { grid-template-columns: 1fr; }
     .sidebar, .right-panel { display: none; }
+    /* Sol ve Sağ yan menülerin yapışkan olması için */
+.sidebar-left, .sidebar-right {
+    position: sticky; /* Sayfayla birlikte gelmesini sağlar */
+    top: 20px;       /* Sayfanın en tepesinden ne kadar aşağıda duracağını belirler */
+    height: fit-content; /* Sadece içeriği kadar yer kaplaması için önemli */
 }
