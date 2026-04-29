@@ -52,7 +52,7 @@ header {
 
 .main-layout {
     display: grid;
-    /* 3 sütun yerine 2 sütun yaptık, böylece yazılar sağa doğru genişleyecek */
+    /* 3 sütun yerine 2 sütun yaptık böylece yazılar sağa doğru genişleyecek */
     grid-template-columns: 220px 1fr; 
     gap: 30px;
     max-width: 1100px;
