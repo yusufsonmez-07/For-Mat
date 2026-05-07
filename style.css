@@ -104,4 +104,21 @@ header {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    .modal-submit-btn {
+    background-color: #b92b27; /* Quora Kırmızısı */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    display: block !important; /* Görünürlüğü zorla */
+    transition: background 0.3s;
+}
+
+.modal-submit-btn:hover {
+    background-color: #9b2421;
+}
 }
