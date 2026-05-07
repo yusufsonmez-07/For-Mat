@@ -67,6 +67,16 @@ header {
     .sidebar, .right-panel { display: none; }
 } 
 
+.btn-primary {
+    display: inline-block !important; /* Görünürlüğü zorla */
+    background-color: #b92b27 !important; /* Kırmızı renk */
+    color: white !important; /* Beyaz yazı */
+    padding: 8px 15px !important; /* Boşluk */
+    border-radius: 20px !important; /* Yuvarlak köşeler */
+    text-decoration: none !important; /* Alt çizgiyi kaldır */
+    font-weight: bold !important; /* Kalın yazı */
+}
+
 /* --- MODAL (PENCERE) AYARLARI (Medya sorgusunun dışında olmalı) --- */
 .modal {
     display: none; 
