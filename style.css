@@ -135,3 +135,26 @@ header {
     background-color: #9b2421;
 }
 }
+
+/* style.css dosyasının EN ALTINA, tüm parantezlerin dışına yapıştır */
+
+header .nav-links a.btn-primary {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: #b92b27 !important; /* Quora Kırmızısı */
+    color: #ffffff !important; /* Kar beyazı yazı */
+    padding: 10px 20px !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    margin-left: 15px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+    border: none !important;
+}
+
+/* Üstüne gelince rengi hafif değişsin */
+header .nav-links a.btn-primary:hover {
+    background-color: #9b2421 !important;
+    color: #ffffff !important;
+}
