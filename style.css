@@ -65,7 +65,7 @@ header {
 @media (max-width: 800px) {
     .main-layout { grid-template-columns: 1fr; }
     .sidebar, .right-panel { display: none; }
-} /* BAK BURADA KAPATTIK! */
+} 
 
 /* --- MODAL (PENCERE) AYARLARI (Medya sorgusunun dışında olmalı) --- */
 .modal {
@@ -98,14 +98,17 @@ header {
     cursor: pointer;
 }
 
+
 .comment-input {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    .modal-submit-btn {
-    background-color: #b92b27; /* Quora Kırmızısı */
+} 
+
+.modal-submit-btn {
+    background-color: #b92b27;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -114,7 +117,7 @@ header {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-    display: block !important; /* Görünürlüğü zorla */
+    display: block !important;
     transition: background 0.3s;
 }
 
