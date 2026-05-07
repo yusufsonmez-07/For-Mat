@@ -126,25 +126,52 @@ window.onclick = function(event) {
     }
 }
 
-// Yorum Ekleme Fonksiyonu
+// Sayfa açıldığında eski yorumları yükle
+window.onload = function() {
+    loadComments();
+    // Beğenileri de buradan yükletebiliriz
+};
+
 function addComment() {
     const name = document.getElementById('commenterName').value;
     const text = document.getElementById('commentText').value;
     
     if(name && text) {
-        const list = document.getElementById('commentList');
-        const newComment = document.createElement('div');
-        newComment.className = 'comment-item';
-        newComment.innerHTML = `<strong>${name}</strong>: ${text}`;
+        const commentData = { name: name, text: text, date: new Date().toLocaleString() };
         
-        list.prepend(newComment); // Yeni yorumu en üste ekle
-        
-        // Temizle
+        // 1. Önce yerel hafızaya kaydet
+        let comments = JSON.parse(localStorage.getItem('myComments')) || [];
+        comments.push(commentData);
+        localStorage.setItem('myComments', JSON.stringify(comments));
+
+        // 2. Ekranda göster
+        displayComment(commentData);
+
         document.getElementById('commenterName').value = '';
         document.getElementById('commentText').value = '';
-    } else {
-        alert("Lütfen tüm alanları doldur kanka!");
     }
+}
+
+function loadComments() {
+    const list = document.getElementById('commentList');
+    list.innerHTML = ''; // Temizle
+    let comments = JSON.parse(localStorage.getItem('myComments')) || [];
+    comments.forEach(c => displayComment(c));
+}
+
+function displayComment(c) {
+    const list = document.getElementById('commentList');
+    const item = document.createElement('div');
+    item.className = 'comment-item';
+    item.innerHTML = `<strong>${c.name}</strong>: ${c.text} <br><small>${c.date}</small>`;
+    list.prepend(item);
+}
+    }
+function likePost(postId) {
+    let likes = localStorage.getItem('likes-' + postId) || 0;
+    likes = parseInt(likes) + 1;
+    localStorage.setItem('likes-' + postId, likes);
+    document.getElementById('count-' + postId).innerText = likes;
 }
 
 </script>
