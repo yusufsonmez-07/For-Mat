@@ -87,74 +87,46 @@ header {
     .sidebar, .right-panel { display: none; }
     /* Sol ve Sağ yan menülerin yapışkan olması için */
 
-    /* Modal Arka Planı */
+
+/* Modal arka planı - Ekranı kaplar */
 .modal {
-    display: none; /* Başlangıçta gizli */
-    position: fixed;
-    z-index: 1000;
+    display: none; 
+    position: fixed; /* Sayfayı kaydırsan da orada kalır */
+    z-index: 9999; /* Her şeyin üstünde görünür */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7); /* Karartma */
-    overflow-y: auto;
+    background-color: rgba(0,0,0,0.8); /* Arkayı karartır */
+    overflow-y: auto; /* İçerik uzunsa modal içinde kaydırılabilir */
 }
 
-/* Modal İçeriği */
+/* Modal kutusu */
 .modal-content {
     background-color: #fff;
-    margin: 5% auto;
-    padding: 25px;
-    border-radius: 15px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
     width: 90%;
-    max-width: 700px;
+    max-width: 600px;
     position: relative;
-    animation: slideUp 0.3s ease-out;
 }
 
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Kapatma Butonu */
+/* Kapatma butonu (X) */
 .close-btn {
     position: absolute;
     right: 20px;
     top: 15px;
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
-    color: #636466;
-}
-
-/* Yorum Formu */
-.comment-section {
-    margin-top: 30px;
-    border-top: 2px solid #eee;
-    padding-top: 20px;
 }
 
 .comment-input {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-.comment-list {
-    margin-top: 20px;
-    list-style: none;
-    padding: 0;
-}
-
-.comment-item {
-    background: #f8f9fa;
-    padding: 12px;
-    border-radius: 8px;
     margin-bottom: 10px;
-    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
     
 }
