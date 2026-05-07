@@ -75,5 +75,22 @@
             </div>
         </aside>
     </div>
+    <div id="blogModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalBody">
+            </div>
+        
+        <div class="comment-section">
+            <h4>Yorum Yap</h4>
+            <input type="text" id="commenterName" class="comment-input" placeholder="Adınız Soyadınız">
+            <textarea id="commentText" class="comment-input" rows="3" placeholder="Düşüncelerini paylaş..."></textarea>
+            <button onclick="addComment()" class="btn-primary" style="border:none; cursor:pointer;">Gönder</button>
+            
+            <div class="comment-list" id="commentList">
+                </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
