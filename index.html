@@ -17,171 +17,148 @@
             </nav>
         </div>
     </header>
-    
-        </aside>
-        
+
+    <div class="main-layout">
         <main class="feed">
-            <div class="card" style="border-left: 5px solid #b92b27;">
+            <div class="card" style="border-left: 5px solid #b92b27; cursor: default;">
                 <small style="color: #b92b27; font-weight: bold;">Hakkımızda</small>
                 <h2>For-Mat Nedir?</h2>
-                <p><strong>For-Mat</strong> ismi, <strong>Forum</strong> ve <strong>Matematik</strong> kelimelerinin birleşiminden gelmektedir. Amacımız sayıların sıkıcı dünyasından çıkıp, matematiğin eğlenceli yanlarını keşfetmek.</p>
+                <p><strong>For-Mat</strong> ismi, <strong>Forum</strong> ve <strong>Matematik</strong> kelimelerinin birleşiminden gelmektedir.</p>
             </div>
 
             <div class="card">
-                <div class="author-info" style="font-size: 13px; color: #636466; margin-bottom: 5px;">✍️ Bir Öğrencinin Kaleminden</div>
-                <h2>Siyah Beyaz Sayılardan Renkli Dünyalara</h2>
-                <p>Eskiden matematik benim için sadece siyah bir tahtada beyaz tebeşirle yazılan, asla bitmek bilmeyen formüller yığınıydı. Sınav kağıdındaki o X’leri bulmaya çalışırken, 'Gerçek hayatta bu benim ne işime yarayacak ki?' diye düşünürdüm.</p>
+                <div class="card-content" onclick="openBlog(this)">
+                    <div class="author-info">✍️ Bir Öğrencinin Kaleminden</div>
+                    <h2>Siyah Beyaz Sayılardan Renkli Dünyalara</h2>
+                    <p>Eskiden matematik benim için sadece siyah bir tahtada beyaz tebeşirle yazılan, asla bitmek bilmeyen formüller yığınıydı. Sınav kağıdındaki o X’leri bulmaya çalışırken, 'Gerçek hayatta bu benim ne işime yarayacak ki?' diye düşünürdüm.</p>
                 <p>Her şey bir gün kendi bilgisayarımı toplamak ve bir simülasyonda hidrolik sistemlerin nasıl çalıştığını anlamaya çalışmamla değişti. O gün anladım ki; o nefret ettiğim açılar ve oranlar aslında mekanik bir kolun nasıl hareket edeceğini belirleyen gizli bir dilmiş.</p>
                 <p>Matematiği sevmeye başladım çünkü artık onu bir ödev olarak değil, dünyayı kontrol etmemi sağlayan bir süper güç olarak görüyordum.</p>
+                </div>
                 <div class="like-section">
-    <button onclick="likePost('post1')" id="likeBtn-post1">❤️ <span id="count-post1">0</span> Beğeni</button>
-</div>
+                    <button onclick="likePost('post1')">❤️ <span id="count-post1">0</span> Beğeni</button>
+                </div>
             </div>
-            <div class="card" style="margin-top: 25px; line-height: 1.8;">
-    <div class="author-info" style="font-size: 13px; color: #636466; margin-bottom: 8px;">✍️ Evrenin Geometrisi</div>
-    <h2 style="font-size: 22px; margin-bottom: 12px;">Pi Sayısı: Sonsuzluğa Uzanan Bir Yolculuk</h2>
-    <p>Matematik derslerinde karşımıza çıkan en meşhur sabit kuşkusuz π (Pi) sayısıdır. Çoğumuz onu 3,14 olarak yuvarlayıp geçsek de, aslında o sonu gelmeyen ve kendini asla tekrar etmeyen devasa bir gizemdir. Pi, bir çemberin çevresinin çapına olan sabit oranıdır; yani evrendeki en küçük atomdan en devasa galaksiye kadar her türlü dairesel yapıda bu sayı gizlidir.</p>
+
+            <div class="card">
+                <div class="card-content" onclick="openBlog(this)">
+                    <div class="author-info">✍️ Evrenin Geometrisi</div>
+                    <h2>Pi Sayısı: Sonsuzluğa Uzanan Bir Yolculuk</h2>
+                    <p>Matematik derslerinde karşımıza çıkan en meşhur sabit kuşkusuz π (Pi) sayısıdır. Çoğumuz onu 3,14 olarak yuvarlayıp geçsek de, aslında o sonu gelmeyen ve kendini asla tekrar etmeyen devasa bir gizemdir. Pi, bir çemberin çevresinin çapına olan sabit oranıdır; yani evrendeki en küçük atomdan en devasa galaksiye kadar her türlü dairesel yapıda bu sayı gizlidir.</p>
     <p>Antik Babil’den Mısır’a, Arşimet’ten modern süper bilgisayarlara kadar insanlık binlerce yıldır bu sayının basamaklarını kovalamıştır. Bugün bilgisayarlar Pi'nin trilyonlarca basamağını hesaplayabiliyor. Peki bu ne işe yarıyor? Sadece bir rekor mu? Kesinlikle hayır! NASA, gezegenler arası yörünge hesaplamalarında Pi'yi kullanırken sadece 15-16 basamak kullanarak hata payını bir saç teli kadar küçültebiliyor. Eğer Pi'nin tam değerini bilmeseydik, bugün ne GPS sistemlerimiz doğru çalışırdı ne de mühendislik harikası köprülerimiz ayakta kalırdı.</p>
     <p>İlginç bir bilgi daha: Pi sayısının içinde doğum tarihinizden telefon numaranıza kadar her türlü sayı dizisi bir yerlerde mutlaka geçer. Çünkü o "irrasyonel" bir sayıdır; yani sonsuza kadar gider ve içinde her türlü kombinasyonu barındırır. Matematikçiler hala bu sayının içinde bir düzen olup olmadığını araştırıyor. Belki de evrenin tüm sırları 3,14 ile başlayan bu sonsuz dizinin içinde bir yerde gizlidir.</p>
-    <div class="like-section">
-    <button onclick="likePost('post1')" id="likeBtn-post1">❤️ <span id="count-post1">0</span> Beğeni</button>
-</div>
-</div>
-            <div class="card" style="margin-top: 25px; line-height: 1.8;">
-    <div class="author-info" style="font-size: 13px; color: #636466; margin-bottom: 8px;">✍️ Siber Matematikçi</div>
-    <h2 style="font-size: 22px; margin-bottom: 12px;">Asal Sayılar: İnterneti Koruyan Görünmez Duvarlar</h2>
-    <p>Okulda öğrendiğimiz "sadece 1'e ve kendisine bölünebilen sayılar" tanımı, asal sayıların ne kadar güçlü olduğunu anlatmakta biraz yetersiz kalıyor. Asal sayılar aslında matematiğin "atomlarıdır". Diğer tüm sayılar, asal sayıların çarpımıyla oluşur. Ama onları asıl önemli kılan şey, modern dünyanın dijital güvenliğini, yani şifreleme teknolojilerini ayakta tutmalarıdır.</p>
+                </div>
+                <div class="like-section">
+                    <button onclick="likePost('post2')">❤️ <span id="count-post2">0</span> Beğeni</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content" onclick="openBlog(this)">
+                    <div class="author-info">✍️ Siber Matematikçi</div>
+                    <h2>Asal Sayılar: İnterneti Koruyan Görünmez Duvarlar</h2>
+                    Okulda öğrendiğimiz "sadece 1'e ve kendisine bölünebilen sayılar" tanımı, asal sayıların ne kadar güçlü olduğunu anlatmakta biraz yetersiz kalıyor. Asal sayılar aslında matematiğin "atomlarıdır". Diğer tüm sayılar, asal sayıların çarpımıyla oluşur. Ama onları asıl önemli kılan şey, modern dünyanın dijital güvenliğini, yani şifreleme teknolojilerini ayakta tutmalarıdır.</p>
     <p>Bugün Steam hesabınıza girerken veya internetten alışveriş yaparken verileriniz RSA algoritmasıyla korunur. Bu algoritma, iki tane devasa (yüzlerce basamaklı) asal sayının çarpılmasına dayanır. Bilgisayarlar için iki sayıyı çarpmak milisaniyeler sürer; ancak ortaya çıkan o devasa sayıyı tekrar asal çarpanlarına ayırmak, bugünkü en güçlü süper bilgisayarlar için bile binlerce yıl sürebilir. İşte bu matematiksel imkansızlık, sizin verilerinizin çalınmasını engelleyen asıl şeydir.</p>
-    <p>Asal sayıların dağılımı hala büyük bir gizemdir. Matematikçiler yüzyıllardır bu sayıların bir kurala göre mi dizildiğini yoksa tamamen rastgele mi olduğunu bulmaya çalışıyor. Riemann Hipotezi gibi çözülememiş en büyük matematik problemlerinden biri de bu konuyla ilgilidir. Kısacası, o "yalnız" asal sayılar olmasaydı, bugün dijital dünyada ne gizlilikten ne de güvenlikten bahsedebilirdik.</p>
-    <div class="like-section">
-    <button onclick="likePost('post1')" id="likeBtn-post1">❤️ <span id="count-post1">0</span> Beğeni</button>
-</div>
-</div>
-            <div class="card" style="margin-top: 25px; line-height: 1.8;">
-    <div class="author-info" style="font-size: 13px; color: #636466; margin-bottom: 8px;">✍️ Tarih ve Sayılar</div>
-    <h2 style="font-size: 22px; margin-bottom: 12px;">Sıfır: Hiçlikten Doğan Devasa Güç</h2>
-    <p>Bugün sıfırı (0) çok doğal karşılıyoruz ama insanlık tarihinin büyük bir bölümünde "hiçlik" bir sayı olarak kabul edilmedi. Romalılar muhteşem köprüler ve yollar yaptılar ama sıfırı hiç kullanmadılar (Romen rakamlarını düşünün: I, V, X, L... Sıfır yok!). Sıfırın bir sayı olarak kabul edilmesi ve matematiğe dahil edilmesi, Hindistan’daki matematikçiler sayesinde gerçekleşti ve dünyayı tamamen değiştirdi.</p>
-    <p>Sıfır sadece bir "yokluk" belirtmez, aynı zamanda basamak değerlerini tutan bir yer tutucudur. 1 ile 10 arasındaki o kritik farkı sıfır yaratır. Ancak sıfırın asıl korkutucu gücü işlemlerde ortaya çıkar. Toplamada etkisizdir, çarpmada "yutan eleman"dır (her şeyi kendine benzetir), ama bölmede tam bir felakettir. Bir sayıyı sıfıra bölmeye çalışırsanız matematik "tanımsız" diyerek pes eder. Bu durum fizikte "kara deliklerin" merkezindeki tekilliğe benzer; yani matematiğin kurallarının bittiği nokta.</p>
-    <p>Bilgisayar dünyasında ise her şey sıfırla başlar. İlk dizinlerin (index) 1'den değil 0'dan başlaması sadece bir gelenek değil, donanımın ve bellek adreslemesinin matematiksel bir gerekliliğidir. Yani sıfır olmasaydı, ne karmaşık borsa hesaplarını yapabilirdik ne de bugün kullandığımız yazılımları geliştirebilirdik. Hiçlik, aslında her şeyin temelidir.</p>
-    <div class="like-section">
-    <button onclick="likePost('post1')" id="likeBtn-post1">❤️ <span id="count-post1">0</span> Beğeni</button>
-</div>
-</div>
+    <p>Asal sayıların dağılımı hala büyük bir gizemdir. Matematikçiler yüzyıllardır bu sayıların bir kurala göre mi dizildiğini yoksa tamamen rastgele mi olduğunu bulmaya çalışıyor. Riemann Hipotezi gibi çözülememiş en büyük matematik problemlerinden biri de bu konuyla ilgilidir. Kısacası, o "yalnız" asal sayılar olmasaydı, bugün dijital dünyada ne gizlilikten ne de güvenlikten bahsedebilirdik.</p
+                </div>
+                <div class="like-section">
+                    <button onclick="likePost('post3')">❤️ <span id="count-post3">0</span> Beğeni</button>
+                </div>
+            </div>
         </main>
 
         <aside class="right-panel">
             <div class="sidebar-box">
-    <h4>📢 Duyurular</h4>
-    <p style="font-size: 13px; color: #636466;">
-        2026 İOKBS soru kitapçıkları ve cevap anahtarları yayımlandı. İncelemek için 
-        <a href="https://odsgm.meb.gov.tr/www/ilkogretim-ve-ortaogretim-kurumlari-bursluluk-sinavi-iokbs-2026-soru-kitapciklari-ve-cevap-anahtarlari-yayimlandi/icerik/1615/tr" target="_blank" style="color: var(--quora-red); text-decoration: underline; font-weight: bold;">tıklayınız</a>.
-    </p>
-    <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
-    <h4>🏆 Haftanın Yazarı</h4>
-    <p style="font-size: 14px; font-weight: bold;">@Evrenin Geometrisi</p>
-</div>
+                <h4>📢 Duyurular</h4>
+                <p style="font-size: 13px; color: #636466;">2026 İOKBS sonuçları açıklandı.</p>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
+                <h4>🏆 Haftanın Yazarı</h4>
+                <p style="font-size: 14px; font-weight: bold;">@Evrenin Geometrisi</p>
             </div>
         </aside>
     </div>
+
     <div id="blogModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modalBody">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+            <hr style="margin: 20px 0;">
+            <div class="comment-section">
+                <h4>Yorum Yap</h4>
+                <input type="text" id="commenterName" class="comment-input" placeholder="Adınız Soyadınız">
+                <textarea id="commentText" class="comment-input" rows="3" placeholder="Düşüncelerinizi paylaşın..."></textarea>
+                <button onclick="addComment()" class="modal-submit-btn">Yorumu Gönder</button>
+                <div id="commentList" class="comment-list"></div>
             </div>
-        
-        <div class="comment-section">
-            <h4>Yorum Yap</h4>
-            <input type="text" id="commenterName" class="comment-input" placeholder="Adınız Soyadınız">
-            <textarea id="commentText" class="comment-input" rows="3" placeholder="Düşüncelerini paylaş..."></textarea>
-            <button onclick="addComment()" class="modal-submit-btn">Gönder</button>
-            
-            <div class="comment-list" id="commentList">
-                </div>
         </div>
     </div>
-</div>
 
     <script>
-    // Blog kartlarını tıklanabilir yapalım
-document.querySelectorAll('.card').forEach(card => {
-    card.style.cursor = 'pointer';
-    card.addEventListener('click', function() {
-        const title = this.querySelector('h2').innerText;
-        const content = this.querySelectorAll('p');
-        let fullContent = `<h2>${title}</h2>`;
-        
-        content.forEach(p => fullContent += `<p>${p.innerText}</p>`);
-        
-        openModal(fullContent);
-    });
-});
+        window.onload = function() {
+            loadComments();
+            loadLikes();
+        };
 
-function openModal(content) {
-    document.getElementById('modalBody').innerHTML = content;
-    document.getElementById('blogModal').style.display = "block";
-    document.body.style.overflow = "hidden"; // Arka plan kaymasın
-}
+        function openBlog(element) {
+            const title = element.querySelector('h2').innerText;
+            const paragraphs = element.querySelectorAll('p');
+            let content = `<h2>${title}</h2>`;
+            paragraphs.forEach(p => content += `<p>${p.innerText}</p>`);
+            
+            document.getElementById('modalBody').innerHTML = content;
+            document.getElementById('blogModal').style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
 
-function closeModal() {
-    document.getElementById('blogModal').style.display = "none";
-    document.body.style.overflow = "auto";
-}
+        function closeModal() {
+            document.getElementById('blogModal').style.display = "none";
+            document.body.style.overflow = "auto";
+        }
 
-// Dışarı tıklayınca kapatma
-window.onclick = function(event) {
-    if (event.target == document.getElementById('blogModal')) {
-        closeModal();
-    }
-}
+        function addComment() {
+            const name = document.getElementById('commenterName').value;
+            const text = document.getElementById('commentText').value;
+            if(name && text) {
+                const comment = { name, text, date: new Date().toLocaleString() };
+                let comments = JSON.parse(localStorage.getItem('myComments')) || [];
+                comments.push(comment);
+                localStorage.setItem('myComments', JSON.stringify(comments));
+                displayComment(comment);
+                document.getElementById('commenterName').value = '';
+                document.getElementById('commentText').value = '';
+            }
+        }
 
-// Sayfa açıldığında eski yorumları yükle
-window.onload = function() {
-    loadComments();
-    // Beğenileri de buradan yükletebiliriz
-};
+        function loadComments() {
+            const list = document.getElementById('commentList');
+            list.innerHTML = '';
+            let comments = JSON.parse(localStorage.getItem('myComments')) || [];
+            comments.forEach(c => displayComment(c));
+        }
 
-function addComment() {
-    const name = document.getElementById('commenterName').value;
-    const text = document.getElementById('commentText').value;
-    
-    if(name && text) {
-        const commentData = { name: name, text: text, date: new Date().toLocaleString() };
-        
-        // 1. Önce yerel hafızaya kaydet
-        let comments = JSON.parse(localStorage.getItem('myComments')) || [];
-        comments.push(commentData);
-        localStorage.setItem('myComments', JSON.stringify(comments));
+        function displayComment(c) {
+            const list = document.getElementById('commentList');
+            const div = document.createElement('div');
+            div.className = 'comment-item';
+            div.innerHTML = `<strong>${c.name}</strong>: ${c.text} <br><small style="color:#999">${c.date}</small>`;
+            list.prepend(div);
+        }
 
-        // 2. Ekranda göster
-        displayComment(commentData);
+        function likePost(postId) {
+            let likes = localStorage.getItem('likes-' + postId) || 0;
+            likes = parseInt(likes) + 1;
+            localStorage.setItem('likes-' + postId, likes);
+            document.getElementById('count-' + postId).innerText = likes;
+        }
 
-        document.getElementById('commenterName').value = '';
-        document.getElementById('commentText').value = '';
-    }
-}
+        function loadLikes() {
+            ['post1', 'post2', 'post3'].forEach(id => {
+                document.getElementById('count-' + id).innerText = localStorage.getItem('likes-' + id) || 0;
+            });
+        }
 
-function loadComments() {
-    const list = document.getElementById('commentList');
-    list.innerHTML = ''; // Temizle
-    let comments = JSON.parse(localStorage.getItem('myComments')) || [];
-    comments.forEach(c => displayComment(c));
-}
-
-function displayComment(c) {
-    const list = document.getElementById('commentList');
-    const item = document.createElement('div');
-    item.className = 'comment-item';
-    item.innerHTML = `<strong>${c.name}</strong>: ${c.text} <br><small>${c.date}</small>`;
-    list.prepend(item);
-}
-    }
-function likePost(postId) {
-    let likes = localStorage.getItem('likes-' + postId) || 0;
-    likes = parseInt(likes) + 1;
-    localStorage.setItem('likes-' + postId, likes);
-    document.getElementById('count-' + postId).innerText = likes;
-}
-
-</script>
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('blogModal')) closeModal();
+        }
+    </script>
 </body>
 </html>
