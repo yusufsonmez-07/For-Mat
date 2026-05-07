@@ -92,5 +92,61 @@
         </div>
     </div>
 </div>
+
+    <script><!--  -->
+    // Blog kartlarını tıklanabilir yapalım
+document.querySelectorAll('.card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        const title = this.querySelector('h2').innerText;
+        const content = this.querySelectorAll('p');
+        let fullContent = `<h2>${title}</h2>`;
+        
+        content.forEach(p => fullContent += `<p>${p.innerText}</p>`);
+        
+        openModal(fullContent);
+    });
+});
+
+function openModal(content) {
+    document.getElementById('modalBody').innerHTML = content;
+    document.getElementById('blogModal').style.display = "block";
+    document.body.style.overflow = "hidden"; // Arka plan kaymasın
+}
+
+function closeModal() {
+    document.getElementById('blogModal').style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Dışarı tıklayınca kapatma
+window.onclick = function(event) {
+    if (event.target == document.getElementById('blogModal')) {
+        closeModal();
+    }
+}
+
+// Yorum Ekleme Fonksiyonu
+function addComment() {
+    const name = document.getElementById('commenterName').value;
+    const text = document.getElementById('commentText').value;
+    
+    if(name && text) {
+        const list = document.getElementById('commentList');
+        const newComment = document.createElement('div');
+        newComment.className = 'comment-item';
+        newComment.innerHTML = `<strong>${name}</strong>: ${text}`;
+        
+        list.prepend(newComment); // Yeni yorumu en üste ekle
+        
+        // Temizle
+        document.getElementById('commenterName').value = '';
+        document.getElementById('commentText').value = '';
+    } else {
+        alert("Lütfen tüm alanları doldur kanka!");
+    }
+}
+
+</script>
 </body>
 </html>
