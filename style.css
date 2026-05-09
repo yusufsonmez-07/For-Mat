@@ -1,33 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.euler-walker {
-    position: fixed;
-    bottom: 10px;
-    left: -200px;
-    z-index: 9999;
-    pointer-events: none;
-    animation: slideAcross 15s linear infinite;
-}
-
-.euler-math {
-    display: inline-block;
-    font-size: 32px;
-    font-weight: bold;
-    color: #b92b27;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    animation: jumpEffect 0.5s ease-in-out infinite alternate;
-}
-
-@keyframes slideAcross {
-    from { left: -200px; }
-    to { left: 100%; }
-}
-
-@keyframes jumpEffect {
-    from { transform: translateY(0) rotate(-5deg); }
-    to { transform: translateY(-35px) rotate(5deg); }
-}
-
 :root {
     --quora-red: #b92b27;
     --bg-gray: #f1f2f2;
