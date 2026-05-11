@@ -1,8 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+/* inter-500 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/inter-v20-latin-600.woff2') format('woff2');
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/inter-v20-latin-700.woff2') format('woff2');
+}
 
 :root {
     --quora-red: #b92b27;
-    --bg-gray: #f1f2f2;
+    --bg-gray: #dbb9c871;
     --border-color: #dee0e1;
     --text-main: #282829;
     --text-dark: #1a1a1b;
@@ -134,7 +165,6 @@ header {
 .modal-submit-btn:hover {
     background-color: #9b2421;
 }
-}
 
 /* style.css dosyasının EN ALTINA, tüm parantezlerin dışına yapıştır */
 
@@ -189,4 +219,30 @@ header .nav-links a.btn-primary:hover {
 /* Blog Yaz butonu için de padding'i eşitleyelim ki aynı boyda olsunlar */
 .btn-primary {
     padding: 9px 18px !important; /* Çerçeveli butonla hizalanması için */
+}
+/* BEĞENİ BUTONU MODERN STİL */
+.like-btn {
+  margin-top: 15px; /* Kartın içeriğinden biraz aşağı insin */
+  background-color: #fff; /* Temiz, beyaz arka plan */
+  border: 1px solid #dee0e1; /* İnce, gri kenarlık */
+  border-radius: 20px; /* Modern, yuvarlak (pill-shape) köşeler */
+  color: #636466; /* Yazı rengi gri */
+  padding: 6px 16px; /* Butonun içi dolgun ve geniş dursun */
+  font-size: 13px; /* Yazı boyutu */
+  cursor: pointer; /* Üzerine gelince el işareti çıksın */
+  display: flex; /* Kalp ve metni yan yana hizalamak için */
+  align-items: center; /* Dikeyde merkezlemek için */
+  gap: 6px; /* Kalp simgesi ve metin arasındaki boşluk */
+  font-weight: 600; /* Yazıyı kalın yapıp dikkat çekelim */
+  transition: all 0.2s ease; /* Hover (üzerine gelme) efekti için yumuşak geçiş */
+  outline: none; /* Tıklandığında çıkan odak çerçevesini kaldır */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Hafif gölge ile derinlik katalım */
+}
+
+/* ÜZERİNE GELİNDİĞİNDE (HOVER) OLACAKLAR */
+.like-btn:hover {
+  background-color: #ffebee; /* Arka plan temanın kırmızısının çok açık tonu olsun */
+  border-color: #b92b27; /* Kenarlık temanın kırmızısı olsun */
+  color: #b92b27; /* Yazı temanın kırmızısı olsun */
+  box-shadow: 0 2px 4px rgba(185,43,39,0.2); /* Kırmızımsı, daha belirgin gölge */
 }
