@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>For-Mat | Matematik Forumu</title>
 </head>
 <body>
@@ -18,7 +17,7 @@
         </div>
     </header>
 
-    <div class="main-layout" style="display: flex; max-width: 1000px; margin: 20px auto; gap: 20px; padding: 0 20px;">
+    <div class="main-layout" style="display: flex; max-width: 1500px; margin: 20px auto; gap: 20px; padding: 0 20px;">
         <main class="feed" style="flex: 1;">
             <div class="card" style="border-left: 5px solid #b92b27; cursor: default !important;">
                 <small style="color: #b92b27; font-weight: bold;">Hakkımızda</small>
@@ -66,7 +65,7 @@
             </div>
         </main>
 
-        <aside class="right-panel" style="width: 300px;">
+        <aside class="right-panel" style="width: 400px;">
             <div class="sidebar-box" style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #dee0e1;">
                 <h4>📢 Duyurular</h4>
                 <p style="font-size: 13px; color: #636466;">2026 İOKBS soru kitapçıkları ve cevap anahtarları yayımlandı. İncelemek için 
@@ -80,101 +79,157 @@
     </div>
 
     <div id="blogModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="modalBody"></div>
-            <div class="comment-section">
-                <h4>Yorum Yap</h4>
-                <input type="text" id="commenterName" class="comment-input" placeholder="Adınız Soyadınız">
-                <textarea id="commentText" class="comment-input" rows="3" placeholder="Düşüncelerini paylaş..."></textarea>
-                <button onclick="addComment()" class="modal-submit-btn">Gönder</button>
-                <div class="comment-list" id="commentList"></div>
-            </div>
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div> 
+        
+        <div class="comment-section">
+            <h4>Yorum Yap</h4>
+            <input type="text" id="commenterName" class="comment-input" placeholder="Adınız">
+            <textarea id="commentText" class="comment-input" rows="3" placeholder="Yorumunuz..."></textarea>
+            <button onclick="addComment()" class="modal-submit-btn">Gönder</button>
+            <div class="comment-list" id="commentList"></div>
         </div>
     </div>
+</div>
 
     <script>
-    // Sayfa açıldığında verileri yükle
-    window.onload = function() {
-        loadComments();
-        loadLikes();
-    };
+// GLOBAL HAFIZA: Hangi yazının açık olduğunu burada tutacağız
+let currentOpenPostId = null;
 
-    // Kart tıklama fonksiyonu (Beğeni butonuna basınca modal açılmasın diye 'event' ekledik)
-    function handleCardClick(event, cardElement) {
-        // Eğer tıklanan şey bir buton ise modalı açma
-        if (event.target.tagName === 'BUTTON' || event.target.closest('button')) return;
+// Sayfa ilk açıldığında sadece beğenileri yükle (yorumlar modal açılınca yüklenecek)
+window.onload = function() {
+    loadLikes();
+};
 
-        const title = cardElement.querySelector('h2').innerText;
-        const paragraphs = cardElement.querySelectorAll('p');
-        let fullContent = `<h2>${title}</h2>`;
-        paragraphs.forEach(p => fullContent += `<p>${p.innerText}</p>`);
-        
-        openModal(fullContent);
-    }
+function handleCardClick(event, cardElement) {
+    if (event.target.tagName === 'BUTTON' || event.target.closest('button')) return;
 
-    function openModal(content) {
-        document.getElementById('modalBody').innerHTML = content;
-        document.getElementById('blogModal').style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-        document.getElementById('blogModal').style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-
-    // Beğeni fonksiyonu (event.stopPropagation ile kart tıklamasını durduruyoruz)
-    function handleLike(event, postId) {
-        event.stopPropagation(); 
-        let likes = localStorage.getItem('likes-' + postId) || 0;
-        likes = parseInt(likes) + 1;
-        localStorage.setItem('likes-' + postId, likes);
-        document.getElementById('count-' + postId).innerText = likes;
-    }
-
-    function loadLikes() {
-        ['post1', 'post2', 'post3'].forEach(id => {
-            const count = localStorage.getItem('likes-' + id) || 0;
-            const element = document.getElementById('count-' + id);
-            if (element) element.innerText = count;
-        });
-    }
-
-    function addComment() {
-        const name = document.getElementById('commenterName').value;
-        const text = document.getElementById('commentText').value;
-        
-        if(name && text) {
-            const commentData = { name: name, text: text, date: new Date().toLocaleString() };
-            let comments = JSON.parse(localStorage.getItem('myComments')) || [];
-            comments.push(commentData);
-            localStorage.setItem('myComments', JSON.stringify(comments));
-            displayComment(commentData);
-
-            document.getElementById('commenterName').value = '';
-            document.getElementById('commentText').value = '';
+    // EFSANE HAMLE: Tıklanan kartın içindeki beğeni butonundan post ID'sini ('post1', 'post2' vb.) çalıyoruz!
+    const likeBtn = cardElement.querySelector('.like-btn');
+    if (likeBtn) {
+        const match = likeBtn.getAttribute('onclick').match(/'([^']+)'/);
+        if (match) {
+            currentOpenPostId = match[1]; // Hangi yazıya tıkladığımızı hafızaya aldık
         }
     }
 
-    function loadComments() {
-        const list = document.getElementById('commentList');
-        list.innerHTML = '';
-        let comments = JSON.parse(localStorage.getItem('myComments')) || [];
-        comments.forEach(c => displayComment(c));
-    }
+    const title = cardElement.querySelector('h2') ? cardElement.querySelector('h2').innerText : "Başlık Yok";
+    const paragraphs = cardElement.querySelectorAll('p');
+    
+    let fullContent = `<h2>${title}</h2>`;
+    paragraphs.forEach(p => {
+        fullContent += `<p>${p.innerText}</p>`;
+    });
 
-    function displayComment(c) {
-        const list = document.getElementById('commentList');
-        const item = document.createElement('div');
-        item.className = 'comment-item';
-        item.innerHTML = `<strong>${c.name}</strong>: ${c.text} <br><small style="color:#888">${c.date}</small>`;
-        list.prepend(item);
-    }
+    openModal(fullContent);
+}
 
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('blogModal')) closeModal();
+function openModal(content) {
+    const modal = document.getElementById('blogModal');
+    const modalBody = document.getElementById('modalBody');
+    
+    if (modal && modalBody) {
+        modalBody.innerHTML = content;
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+        
+        // Modal açıldığında SADECE O YAZININ yorumlarını yükle
+        loadComments(); 
     }
+}
+
+function closeModal() {
+    document.getElementById('blogModal').style.display = "none";
+    document.body.style.overflow = "auto";
+    currentOpenPostId = null; // Kapatınca hafızayı sıfırla
+}
+
+// Beğeni fonksiyonu (Aynı kaldı)
+function handleLike(event, postId) {
+    event.stopPropagation(); 
+    const checkLike = localStorage.getItem('userLiked-' + postId);
+    if (checkLike === 'true') {
+        console.log("Zaten beğenilmiş."); 
+        return;
+    }
+    let currentLikes = parseInt(localStorage.getItem('likes-' + postId)) || 0;
+    currentLikes++;
+    localStorage.setItem('likes-' + postId, currentLikes);
+    localStorage.setItem('userLiked-' + postId, 'true'); 
+    renderLikeStatus(postId, currentLikes);
+}
+
+// Görsel Güncelleme (Aynı kaldı)
+function renderLikeStatus(postId, count) {
+    const likeBtn = document.querySelector(`button[onclick*="${postId}"]`);
+    const countSpan = document.getElementById('count-' + postId);
+    if (countSpan) countSpan.innerText = count;
+    if (localStorage.getItem('userLiked-' + postId) === 'true') {
+        likeBtn.classList.add('is-liked');
+        likeBtn.innerHTML = `❤️ <span id="count-${postId}">${count}</span> Beğenildi`;
+    }
+}
+
+// Uygulama açıldığında tüm beğenileri kontrol et
+function loadLikes() {
+    const postIds = ['post1', 'post2', 'post3']; 
+    postIds.forEach(id => {
+        const savedCount = localStorage.getItem('likes-' + id) || 0;
+        renderLikeStatus(id, savedCount);
+    });
+}
+
+// YORUM EKLEME (Güncellendi!)
+function addComment() {
+    const name = document.getElementById('commenterName').value;
+    const text = document.getElementById('commentText').value;
+    
+    // Eğer isim, yorum yazılmışsa ve bir post açıksa işlemi yap
+    if(name && text && currentOpenPostId) {
+        const commentData = { name: name, text: text, date: new Date().toLocaleString() };
+        
+        // Yorumları GENEL listeye değil, sadece AÇIK OLAN POSTUN listesine kaydet
+        const storageKey = 'myComments-' + currentOpenPostId; 
+        let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+        
+        comments.push(commentData);
+        localStorage.setItem(storageKey, JSON.stringify(comments));
+        
+        displayComment(commentData);
+
+        // Gönderdikten sonra kutuları temizle
+        document.getElementById('commenterName').value = '';
+        document.getElementById('commentText').value = '';
+    }
+}
+
+// YORUMLARI YÜKLEME (Güncellendi!)
+function loadComments() {
+    const list = document.getElementById('commentList');
+    list.innerHTML = ''; // Önce eski yorumları ekrandan temizle
+    
+    if (!currentOpenPostId) return; // Açık post yoksa dur
+
+    // Sadece AÇIK OLAN POSTUN hafızadaki yorumlarını bul ve getir
+    const storageKey = 'myComments-' + currentOpenPostId;
+    let comments = JSON.parse(localStorage.getItem(storageKey)) || [];
+    comments.forEach(c => displayComment(c));
+}
+
+// Yorumları Ekrana Yazdırma Fonksiyonu
+function displayComment(c) {
+    const list = document.getElementById('commentList');
+    const item = document.createElement('div');
+    item.className = 'comment-item';
+    item.innerHTML = `<strong>${c.name}</strong>: ${c.text} <br><small style="color:#888">${c.date}</small>`;
+    list.prepend(item);
+}
+
+// Pencere dışına tıklanınca modalı kapatma
+window.onclick = function(event) {
+    if (event.target == document.getElementById('blogModal')) closeModal();
+}
     </script>
 </body>
 </html>
